@@ -12,7 +12,10 @@ namespace RestaurantWebApp.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            
         }
+
+        public DbSet<CategoryType> CategoryType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
