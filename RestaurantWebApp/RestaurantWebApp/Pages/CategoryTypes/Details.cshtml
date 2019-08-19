@@ -1,0 +1,43 @@
+﻿@page
+@model RestaurantWebApp.Pages.CategoryTypes.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<h2>Category Type Details</h2>
+<hr /><br />
+
+    <div class="form-border">
+        <fieldset disabled>
+            <input type="hidden" asp-for="categoryType.Id" />
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label asp-for="categoryType.Name" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="categoryType.Name" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <label asp-for="categoryType.DisplayOrder" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="categoryType.DisplayOrder" class="form-control" readonly />
+                </div>
+            </div>
+        </fieldset>
+        
+        <br />
+        <div class="form-group">
+            <a asp-page="Edit" class="btn btn-sm btn-primary" asp-route-id="@Model.categoryType.Id">Edit</a>
+            <a asp-page="Index" class="btn btn-sm btn-success">Back to List</a>
+        </div>
+    </div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
